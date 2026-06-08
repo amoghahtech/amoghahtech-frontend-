@@ -1,0 +1,136 @@
+/* ═══════════════════════════════════════════
+   responsive.css — Mobile & Tablet Breakpoints
+   Amoghah Technosys
+   ═══════════════════════════════════════════ */
+
+/* ── 1200px ── */
+@media (max-width: 1200px) {
+  .why-grid   { grid-template-columns: repeat(3, 1fr); }
+  .ind-grid   { grid-template-columns: repeat(4, 1fr); }
+  .proc       { grid-template-columns: repeat(3, 1fr); }
+  .proc::before { display: none; }
+  .fg-grid    { grid-template-columns: 1fr 1fr 1fr; }
+  .pg         { grid-template-columns: 1fr 1fr; }
+  .svc-grid   { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── 1024px ── */
+@media (max-width: 1024px) {
+  .fg-grid { grid-template-columns: 1fr 1fr; }
+  .blog-grid  { grid-template-columns: repeat(2, 1fr); }
+  .tg         { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── 900px (Tablet) ── */
+@media (max-width: 900px) {
+  /* Nav */
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+
+  /* Grids */
+  .two-col,
+  .two-col-r  { grid-template-columns: 1fr; gap: 30px; }
+  .cg         { grid-template-columns: 1fr; gap: 30px; }
+  .vm-grid    { grid-template-columns: 1fr; }
+  .job-grid   { grid-template-columns: 1fr; }
+  .afc-row    { grid-template-columns: 1fr 1fr; }
+
+  /* Portfolio & Blog */
+  .port-grid  { grid-template-columns: 1fr 1fr; }
+  .blog-grid  { grid-template-columns: 1fr 1fr; }
+
+  /* Footer */
+  .fg-grid    { grid-template-columns: 1fr 1fr; }
+
+  /* Pricing */
+  .pg         { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+
+  /* CTA Band */
+  .cta-band   { flex-direction: column; align-items: flex-start; }
+
+  /* Hero */
+  .home-hero  { padding: 90px 5vw 70px; }
+  .home-hero h1 { font-size: clamp(40px, 10vw, 70px); }
+}
+
+/* ── 768px ── */
+@media (max-width: 768px) {
+  section { padding: 60px 5vw; }
+
+  .ph       { padding: 110px 5vw 50px; }
+  .ph h1    { font-size: clamp(28px, 8vw, 44px); }
+
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .ind-grid { grid-template-columns: repeat(3, 1fr); }
+  .proc     { grid-template-columns: repeat(2, 1fr); }
+  .tg       { grid-template-columns: 1fr; }
+
+  .fg-row   { grid-template-columns: 1fr; }
+
+  .stat-pills { gap: 8px; }
+  .sp         { min-width: 90px; padding: 8px 16px; }
+
+  .map-wrap   { height: 200px; }
+}
+
+/* ── 640px (Mobile) ── */
+@media (max-width: 640px) {
+  /* Grids collapse to 1 col */
+  .svc-grid   { grid-template-columns: 1fr; }
+  .port-grid  { grid-template-columns: 1fr; }
+  .blog-grid  { grid-template-columns: 1fr; }
+  .why-grid   { grid-template-columns: 1fr 1fr; }
+  .ind-grid   { grid-template-columns: repeat(2, 1fr); }
+  .fg-grid    { grid-template-columns: 1fr; }
+  .afc-row    { grid-template-columns: 1fr 1fr; }
+
+  /* Hero */
+  .home-hero  { padding: 80px 5vw 60px; min-height: auto; }
+  .hero-btns  { flex-direction: column; align-items: center; }
+  .hero-btns .btn-teal,
+  .hero-btns .btn-ghost { width: 100%; max-width: 280px; justify-content: center; }
+  .stat-pills { flex-wrap: wrap; justify-content: center; }
+
+  /* Process */
+  .proc       { grid-template-columns: 1fr 1fr; }
+
+  /* Bharat band */
+  .bp-grid    { grid-template-columns: 1fr; }
+
+  /* About */
+  .ab-box     { min-height: auto; padding: 30px 24px; }
+  .afc-row    { grid-template-columns: 1fr 1fr; }
+
+  /* Modal */
+  .modal      { padding: 24px 18px; }
+  .fg-row.modal-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .fg-grid    { grid-template-columns: 1fr; }
+  .f-bottom   { flex-direction: column; text-align: center; }
+
+  /* Section title */
+  .stitle     { font-size: clamp(24px, 7vw, 34px); }
+
+  /* CTA band */
+  .cta-band   { padding: 26px 22px; }
+
+  /* Contact form */
+  .cf         { padding: 24px 18px; }
+}
+
+/* ── 420px (Small phones) ── */
+@media (max-width: 420px) {
+  nav   { padding: 0 4vw; }
+  section { padding: 50px 4vw; }
+
+  .hero-badge { font-size: 9.5px; padding: 6px 14px; }
+  .home-hero h1 { font-size: 38px; }
+  .hero-desc  { font-size: 14px; }
+
+  .why-grid   { grid-template-columns: 1fr; }
+  .ind-grid   { grid-template-columns: repeat(2, 1fr); }
+
+  .ph         { padding: 100px 4vw 44px; }
+  .proc       { grid-template-columns: 1fr; }
+}

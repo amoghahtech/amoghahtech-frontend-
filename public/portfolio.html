@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Amoghah Technosys — Our Projects & Case Studies</title>
+<meta name="description" content="View Amoghah Technosys portfolio — LMS platforms, ERP systems, Flutter apps, hospital management systems and more built for Indian businesses.">
+<meta name="keywords" content="Amoghah Technosys portfolio, software projects India, ERP case study India, mobile app portfolio India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amoghahtech.com/portfolio.html">
+<meta property="og:title"       content="Portfolio | Amoghah Technosys Projects & Case Studies">
+<meta property="og:url"         content="https://amoghahtech.com/portfolio.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script>window.API_BASE = '/api'; window.ROOT = '';</script>
+</head>
+<body>
+<script src="js/nav-footer.js"></script>
+
+<div class="ph">
+  <div class="ph-orb ph-o1"></div><div class="ph-orb ph-o2"></div>
+  <div class="ph-inner">
+    <nav class="bc" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="cur">Portfolio</span></nav>
+    <div class="ph-icon"><i class="ti ti-grid-dots"></i></div>
+    <h1>Our <span class="grad-text">Work</span></h1>
+    <p>Real projects. Real results. Built for real Indian businesses across sectors and states.</p>
+  </div>
+</div>
+
+<section style="background:var(--white)">
+  <div class="reveal"><div class="tag">Case Studies</div></div>
+  <h2 class="stitle reveal">Featured <span class="grad-text">Projects</span></h2>
+  <div class="port-grid" id="portfolio-grid">
+    <!-- Default cards — replaced by API data if available -->
+    <div class="port-card reveal"><div class="port-thumb">🏫</div><div class="port-body"><div class="port-cat">Software Development</div><div class="port-title">SchoolPro LMS Platform</div><p class="port-desc">Full-stack LMS for 2,000+ students with live classes, assignments, progress tracking and fee management.</p><div class="port-tags"><span class="port-tag">React</span><span class="port-tag">Node.js</span><span class="port-tag">PostgreSQL</span><span class="port-tag">AWS</span></div></div></div>
+    <div class="port-card reveal"><div class="port-thumb">🛒</div><div class="port-body"><div class="port-cat">Mobile App</div><div class="port-title">FreshMart E-Commerce App</div><p class="port-desc">Flutter grocery delivery app with real-time tracking, payment gateway and vendor management panel.</p><div class="port-tags"><span class="port-tag">Flutter</span><span class="port-tag">Firebase</span><span class="port-tag">Razorpay</span></div></div></div>
+    <div class="port-card reveal"><div class="port-thumb">🏥</div><div class="port-body"><div class="port-cat">Software Development</div><div class="port-title">MediTrack HMS</div><p class="port-desc">Hospital management system with OPD, billing, pharmacy, lab and doctor scheduling modules.</p><div class="port-tags"><span class="port-tag">Laravel</span><span class="port-tag">MySQL</span><span class="port-tag">Vue.js</span></div></div></div>
+    <div class="port-card reveal"><div class="port-thumb">🏢</div><div class="port-body"><div class="port-cat">Website Development</div><div class="port-title">CorporateEdge Website</div><p class="port-desc">High-conversion corporate website with lead capture, blog and full SEO optimization.</p><div class="port-tags"><span class="port-tag">HTML/CSS</span><span class="port-tag">JavaScript</span><span class="port-tag">SEO</span></div></div></div>
+    <div class="port-card reveal"><div class="port-thumb">📦</div><div class="port-body"><div class="port-cat">Software Development</div><div class="port-title">InventPro ERP</div><p class="port-desc">Multi-branch inventory and billing ERP for a retail chain with GST integration.</p><div class="port-tags"><span class="port-tag">React</span><span class="port-tag">Node.js</span><span class="port-tag">MySQL</span></div></div></div>
+    <div class="port-card reveal"><div class="port-thumb">🤖</div><div class="port-body"><div class="port-cat">AI &amp; Automation</div><div class="port-title">LeadBot AI Chatbot</div><p class="port-desc">WhatsApp AI chatbot that qualifies leads, books appointments and sends follow-ups automatically.</p><div class="port-tags"><span class="port-tag">Python</span><span class="port-tag">OpenAI</span><span class="port-tag">WhatsApp API</span></div></div></div>
+  </div>
+</section>
+
+<section style="background:var(--snow);padding-top:0">
+  <div class="cta-band reveal">
+    <div><h3>Want Us to Build Your Project?</h3><p>Share your requirements and get a free estimate within 24 hours.</p></div>
+    <div class="cta-acts"><a href="contact.html" class="btn-teal"><i class="ti ti-send"></i>Get Free Consultation</a></div>
+  </div>
+</section>
+
+<script src="js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await apiFetch('/content/portfolio');
+  if (!data || !data.length) return;
+  const grid = document.getElementById('portfolio-grid');
+  if (!grid) return;
+  grid.innerHTML = data.map(p => `
+    <div class="port-card reveal">
+      <div class="port-thumb">${p.image_url ? `<img src="${p.image_url}" alt="${p.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover">` : (p.emoji || '💻')}</div>
+      <div class="port-body">
+        <div class="port-cat">${p.category || ''}</div>
+        <div class="port-title">${p.title}</div>
+        <p class="port-desc">${p.description || ''}</p>
+        <div class="port-tags">${(p.technologies||'').split(',').filter(Boolean).map(t=>`<span class="port-tag">${t.trim()}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+  initReveal();
+});
+</script>
+</body>
+</html>

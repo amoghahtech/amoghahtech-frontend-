@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | Amoghah Technosys — IT Jobs India, Work From Home</title>
+<meta name="description" content="Join Amoghah Technosys — open positions for Full-Stack Developer, Flutter Developer, UI/UX Designer and Business Development. Remote-friendly IT jobs India.">
+<meta name="keywords" content="IT jobs India, software developer jobs India, remote IT jobs, Flutter developer job India, web developer job Bhopal">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amoghahtech.com/careers.html">
+<meta property="og:title"       content="Careers at Amoghah Technosys — IT Jobs India">
+<meta property="og:url"         content="https://amoghahtech.com/careers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script>window.API_BASE = '/api'; window.ROOT = '';</script>
+</head>
+<body>
+<script src="js/nav-footer.js"></script>
+
+<div class="ph">
+  <div class="ph-orb ph-o1"></div><div class="ph-orb ph-o2"></div>
+  <div class="ph-inner">
+    <nav class="bc" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="cur">Careers</span></nav>
+    <div class="ph-icon"><i class="ti ti-star"></i></div>
+    <h1>Join Our <span class="grad-text">Team</span></h1>
+    <p>Be part of a growing technology company building digital solutions for India. We're looking for passionate people who want to make a real impact.</p>
+  </div>
+</div>
+
+<section style="background:var(--white)">
+  <div class="reveal"><div class="tag">Open Positions</div></div>
+  <h2 class="stitle reveal">Current <span class="grad-text">Openings</span></h2>
+  <p class="sdesc reveal">We're a fast-growing team. Passionate about technology and want to build products for India?</p>
+  <div class="job-grid" id="jobs-grid">
+    <!-- Defaults replaced by API -->
+    <div class="jc reveal"><div class="jc-dept">Engineering</div><h3>Full-Stack Web Developer</h3><p>Build scalable web applications using React, Node.js and modern cloud platforms. SaaS architecture experience is a plus.</p><div class="jc-meta"><div class="jm"><i class="ti ti-map-pin"></i>Remote / India</div><div class="jm"><i class="ti ti-clock"></i>Full Time</div><div class="jm"><i class="ti ti-briefcase"></i>1–3 Years</div></div><button class="btn-teal" onclick="openModal('Job Application — Full-Stack Developer','')">Apply Now →</button></div>
+    <div class="jc reveal"><div class="jc-dept">Mobile</div><h3>Flutter Developer</h3><p>Develop cross-platform Android and iOS apps using Flutter and Dart. Firebase, REST APIs and UX-first thinking required.</p><div class="jc-meta"><div class="jm"><i class="ti ti-map-pin"></i>Remote / India</div><div class="jm"><i class="ti ti-clock"></i>Full Time</div><div class="jm"><i class="ti ti-briefcase"></i>1–2 Years</div></div><button class="btn-teal" onclick="openModal('Job Application — Flutter Developer','')">Apply Now →</button></div>
+    <div class="jc reveal"><div class="jc-dept">Design</div><h3>UI/UX Designer</h3><p>Design intuitive digital experiences using Figma. Work across web and mobile products for Indian businesses and users.</p><div class="jc-meta"><div class="jm"><i class="ti ti-map-pin"></i>Remote / India</div><div class="jm"><i class="ti ti-clock"></i>Full Time</div><div class="jm"><i class="ti ti-briefcase"></i>1–3 Years</div></div><button class="btn-teal" onclick="openModal('Job Application — UI/UX Designer','')">Apply Now →</button></div>
+    <div class="jc reveal"><div class="jc-dept">Sales</div><h3>Business Development Executive</h3><p>Drive client acquisition across India. Identify technology needs of businesses and present Amoghah's solutions effectively.</p><div class="jc-meta"><div class="jm"><i class="ti ti-map-pin"></i>PAN India</div><div class="jm"><i class="ti ti-clock"></i>Full Time</div><div class="jm"><i class="ti ti-briefcase"></i>0–2 Years</div></div><button class="btn-teal" onclick="openModal('Job Application — BDE','')">Apply Now →</button></div>
+  </div>
+  <div style="text-align:center;margin-top:32px;padding:30px;background:var(--snow);border:1px solid var(--border2);border-radius:var(--r-lg)">
+    <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:7px">Don't see your role?</div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:18px">We're always open to meeting talented people. Send us your resume.</p>
+    <a href="contact.html" class="btn-teal"><i class="ti ti-mail"></i>Send Open Application</a>
+  </div>
+</section>
+
+<script src="js/common.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await apiFetch('/content/careers');
+  if (!data || !data.length) return;
+  const grid = document.getElementById('jobs-grid');
+  if (!grid) return;
+  grid.innerHTML = data.map(j => `
+    <div class="jc reveal">
+      <div class="jc-dept">${j.department || ''}</div>
+      <h3>${j.title}</h3>
+      <p>${j.description || ''}</p>
+      <div class="jc-meta">
+        <div class="jm"><i class="ti ti-map-pin"></i>${j.location || 'Remote'}</div>
+        <div class="jm"><i class="ti ti-clock"></i>${j.type || 'Full Time'}</div>
+        <div class="jm"><i class="ti ti-briefcase"></i>${j.experience || ''}</div>
+      </div>
+      <button class="btn-teal" onclick="openModal('Job Application — ${j.title.replace(/'/g,"\\'")}','')">Apply Now →</button>
+    </div>`).join('');
+  initReveal();
+});
+</script>
+</body>
+</html>

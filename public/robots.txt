@@ -1,0 +1,13 @@
+# robots.txt — Amoghah Technosys
+# https://amoghahtech.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block admin panel from indexing
+Disallow: /admin/
+Disallow: /api/
+Disallow: /uploads/
+
+# Sitemap location
+Sitemap: https://amoghahtech.com/sitemap.xml

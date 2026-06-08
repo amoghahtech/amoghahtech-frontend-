@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Amoghah Technosys — Tech Insights for Indian Businesses</title>
+<meta name="description" content="Read technology tips, digital transformation guides and software insights from Amoghah Technosys — India's IT blog for SMEs and growing businesses.">
+<meta name="keywords" content="IT blog India, software tips India, digital transformation India, technology for Indian business, ERP blog India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amoghahtech.com/blog.html">
+<meta property="og:title"       content="Blog | Amoghah Technosys — Tech Insights for India">
+<meta property="og:url"         content="https://amoghahtech.com/blog.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script>window.API_BASE = '/api'; window.ROOT = '';</script>
+</head>
+<body>
+<script src="js/nav-footer.js"></script>
+
+<div class="ph">
+  <div class="ph-orb ph-o1"></div><div class="ph-orb ph-o2"></div>
+  <div class="ph-inner">
+    <nav class="bc" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="cur">Blog</span></nav>
+    <div class="ph-icon"><i class="ti ti-article"></i></div>
+    <h1>Tech <span class="grad-text">Insights</span></h1>
+    <p>Technology tips, digital transformation guides and software insights — written for Indian businesses of all sizes.</p>
+  </div>
+</div>
+
+<section style="background:var(--white)">
+  <div class="reveal"><div class="tag">Latest Articles</div></div>
+  <h2 class="stitle reveal">Tech Insights for <span class="grad-text">India</span></h2>
+  <div class="blog-grid" id="blog-grid">
+    <!-- Defaults replaced by API -->
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--teal-pale),var(--sky-pale))">💡</div><div class="blog-body"><div class="blog-cat-badge">Digital Transformation</div><div class="blog-title">Why Every Tier 2 City Business Needs a Website in 2025</div><p style="font-size:13px;color:var(--muted);line-height:1.7">A digital presence is no longer optional for Indian businesses in smaller cities.</p><div class="blog-meta">June 1, 2025 · 5 min read</div></div></div>
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--mint-pale),var(--teal-pale))">🤖</div><div class="blog-body"><div class="blog-cat-badge">AI &amp; Automation</div><div class="blog-title">How WhatsApp API is Transforming Customer Service for Indian SMEs</div><p style="font-size:13px;color:var(--muted);line-height:1.7">WhatsApp automation is helping Indian businesses serve customers 24/7 without extra staff.</p><div class="blog-meta">May 20, 2025 · 6 min read</div></div></div>
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sky-pale),var(--mint-pale))">📱</div><div class="blog-body"><div class="blog-cat-badge">Mobile Apps</div><div class="blog-title">Flutter vs React Native — Which is Better for Indian Startups?</div><p style="font-size:13px;color:var(--muted);line-height:1.7">Choosing the right mobile framework can save months of development time and lakhs in cost.</p><div class="blog-meta">May 10, 2025 · 7 min read</div></div></div>
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--teal-pale),var(--mint-pale))">🏫</div><div class="blog-body"><div class="blog-cat-badge">EdTech</div><div class="blog-title">How LMS Platforms are Changing Education in India's Districts</div><p style="font-size:13px;color:var(--muted);line-height:1.7">LMS platforms are now affordable for every school and coaching centre in India.</p><div class="blog-meta">April 28, 2025 · 5 min read</div></div></div>
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sky-pale),var(--teal-pale))">📊</div><div class="blog-body"><div class="blog-cat-badge">ERP</div><div class="blog-title">GST Billing + ERP: Why Separate Software is Costing Your Business</div><p style="font-size:13px;color:var(--muted);line-height:1.7">Integrated ERP with GST billing eliminates data silos and saves hours of manual work.</p><div class="blog-meta">April 15, 2025 · 6 min read</div></div></div>
+    <div class="blog-card reveal"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--mint-pale),var(--sky-pale))">🌐</div><div class="blog-body"><div class="blog-cat-badge">Web Development</div><div class="blog-title">Static vs WordPress: Which Website is Right for Your Business?</div><p style="font-size:13px;color:var(--muted);line-height:1.7">Understand the real difference and make the right choice for your business goals.</p><div class="blog-meta">April 5, 2025 · 4 min read</div></div></div>
+  </div>
+</section>
+
+<script src="js/common.js"></script>
+<script>
+const COLORS = [
+  'linear-gradient(135deg,var(--teal-pale),var(--sky-pale))',
+  'linear-gradient(135deg,var(--mint-pale),var(--teal-pale))',
+  'linear-gradient(135deg,var(--sky-pale),var(--mint-pale))',
+  'linear-gradient(135deg,var(--teal-pale),var(--mint-pale))',
+];
+document.addEventListener('DOMContentLoaded', async () => {
+  const data = await apiFetch('/content/blog');
+  if (!data || !data.length) return;
+  const grid = document.getElementById('blog-grid');
+  if (!grid) return;
+  grid.innerHTML = data.map((b, i) => `
+    <div class="blog-card reveal">
+      <div class="blog-thumb" style="background:${COLORS[i % COLORS.length]}">${b.emoji || '📝'}</div>
+      <div class="blog-body">
+        <div class="blog-cat-badge">${b.category || ''}</div>
+        <div class="blog-title">${b.title}</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7">${b.summary || ''}</p>
+        <div class="blog-meta">${b.publish_date || ''} · ${b.read_time || 5} min read</div>
+      </div>
+    </div>`).join('');
+  initReveal();
+});
+</script>
+</body>
+</html>

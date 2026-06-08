@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════
+   base.css — CSS Variables, Reset, Typography
+   Amoghah Technosys — amoghahtech.com
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Brand Colors */
+  --teal:       #0D9488;
+  --teal-l:     #14B8A6;
+  --teal-pale:  #CCFBF1;
+  --sky:        #0EA5E9;
+  --sky-pale:   #E0F2FE;
+  --mint:       #10B981;
+  --mint-pale:  #D1FAE5;
+  --ocean:      #0B4F6C;
+  --deep:       #062435;
+
+  /* Neutrals */
+  --white:  #ffffff;
+  --snow:   #F0FDFA;
+  --ink:    #0F2933;
+  --ink2:   #1E4D5C;
+  --muted:  #5E8A97;
+  --faint:  #9BBAC5;
+
+  /* Borders */
+  --border:  rgba(13,148,136,.13);
+  --border2: rgba(13,148,136,.26);
+
+  /* Gradients */
+  --grad-hero: linear-gradient(135deg, #062435 0%, #0B4F6C 55%, #0D9488 100%);
+  --grad-cta:  linear-gradient(135deg, #0D9488, #0EA5E9);
+  --grad-text: linear-gradient(135deg, #0D9488 0%, #0EA5E9 60%, #10B981 100%);
+
+  /* Radii */
+  --r:    16px;
+  --r-sm: 10px;
+  --r-lg: 24px;
+
+  /* Shadows */
+  --shadow:    0 8px 40px rgba(11,79,108,.10);
+  --shadow-lg: 0 20px 60px rgba(11,79,108,.16);
+
+  /* Typography */
+  --serif: 'DM Serif Display', serif;
+  --sans:  'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--snow);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--snow); }
+::-webkit-scrollbar-thumb {
+  background: var(--grad-cta);
+  border-radius: 10px;
+}
+
+/* ── Base elements ── */
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font-family: var(--sans); }
+img { max-width: 100%; display: block; }
+
+/* ── Utility classes ── */
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding: 4px 14px;
+  background: var(--teal-pale);
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.tag.inv { color: var(--teal-l); background: rgba(20,184,166,.12); }
+
+.stitle {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -.01em;
+}
+.stitle.inv { color: #fff; }
+
+.sdesc {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 580px;
+}
+.sdesc.inv { color: rgba(255,255,255,.65); }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Page SPA system ── */
+section { padding: 88px 5vw; }
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── Two-col layouts ── */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+.two-col-r { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+
+/* ── CTA Band ── */
+.cta-band {
+  background: linear-gradient(135deg, var(--teal-pale), var(--sky-pale));
+  border: 1.5px solid var(--border2);
+  border-radius: var(--r-lg);
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cta-band h3 {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.5vw, 26px);
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.cta-band p { font-size: 14px; color: var(--muted); }
+.cta-acts { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
