@@ -161,17 +161,25 @@
 </div>`;
 
   /* ══ INJECT ══ */
-  const body = document.body;
+  function doInject() {
+    const body = document.body;
 
-  /* Nav — prepend before everything */
-  const navDiv = document.createElement('div');
-  navDiv.innerHTML = navHTML;
-  body.prepend(navDiv);
+    /* Nav — prepend before everything */
+    const navDiv = document.createElement('div');
+    navDiv.innerHTML = navHTML;
+    body.prepend(navDiv);
 
-  /* Footer — append at end */
-  const footDiv = document.createElement('div');
-  footDiv.innerHTML = footerHTML;
-  body.appendChild(footDiv);
+    /* Footer — append at end */
+    const footDiv = document.createElement('div');
+    footDiv.innerHTML = footerHTML;
+    body.appendChild(footDiv);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', doInject);
+  } else {
+    doInject();
+  }
 
   /* FAQ style */
   const faqStyle = document.createElement('style');
