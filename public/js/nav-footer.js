@@ -74,11 +74,11 @@
       </a>
       <p>Empowering businesses through technology — from metro cities to district enterprises across Bharat. Serving 200+ clients in 18+ states.</p>
       <div class="f-socials">
-        <a href="#" class="f-s f-s-linkedin" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-        <a href="#" class="f-s f-s-instagram" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-        <a href="#" class="f-s f-s-facebook" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
-        <a href="#" class="f-s f-s-twitter" aria-label="Twitter/X"><i class="ti ti-brand-x"></i></a>
-        <a href="#" class="f-s f-s-youtube" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+        <a href="#" class="f-s f-s-linkedin" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        <a href="#" class="f-s f-s-instagram" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+        <a href="#" class="f-s f-s-facebook" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        <a href="#" class="f-s f-s-twitter" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="Twitter/X"><i class="ti ti-brand-x"></i></a>
+        <a href="#" class="f-s f-s-youtube" target="_blank" rel="noopener" target="_blank" rel="noopener" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
       </div>
     </div>
     <div class="fc">
