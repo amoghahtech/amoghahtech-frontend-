@@ -29,10 +29,12 @@ if (_nav) {
 }
 
 /* ══ HAMBURGER ══ */
-(function initHamburger() {
+function initHamburger() {
   const btn  = document.querySelector('.hamburger');
   const menu = document.querySelector('.mob-menu');
   if (!btn || !menu) return;
+  if (btn.dataset.bound) return;
+  btn.dataset.bound = '1';
   btn.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     const spans = btn.querySelectorAll('span');
@@ -46,7 +48,11 @@ if (_nav) {
       btn.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
   });
-})();
+}
+initHamburger();
+document.addEventListener('DOMContentLoaded', initHamburger);
+/* Retry shortly after load in case nav was injected late */
+setTimeout(initHamburger, 300);
 
 /* ══ SCROLL REVEAL ══ */
 function initReveal() {
