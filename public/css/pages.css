@@ -5,10 +5,12 @@
 /* ════ HOME HERO ════ */
 .home-hero {
   min-height: 100vh;
+  height: 100vh;
   background: var(--grad-hero);
   display: flex; align-items: center; justify-content: center;
-  padding: 100px 5vw 80px;
+  padding: 80px 5vw 60px;
   position: relative; overflow: hidden; text-align: center;
+  box-sizing: border-box;
 }
 .h-orb {
   position: absolute; border-radius: 50%;
@@ -41,7 +43,7 @@
 @keyframes blink { 0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--mint); } 50% { opacity: .25; box-shadow: none; } }
 .home-hero h1 {
   font-family: var(--serif);
-  font-size: clamp(44px, 8vw, 96px); line-height: 1.0;
+  font-size: clamp(36px, 6vw, 72px); line-height: 1.05;
   color: #fff; margin-bottom: 1.5rem;
   letter-spacing: -.02em; animation: fadeUp .8s .1s ease both;
 }
