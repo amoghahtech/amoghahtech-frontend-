@@ -19,6 +19,21 @@
 <meta name="twitter:title"       content="Amoghah Technosys | Digital Solutions for Bharat">
 <meta name="twitter:description" content="ERP, SaaS, Mobile Apps, Websites & AI Automation for Indian businesses.">
 <meta name="twitter:image"       content="https://amoghahtech.com/images/og-home.jpg">
+<style>
+.home-hero { position: relative; overflow: hidden; }
+.hero-video-bg {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.home-hero .h-orb,
+.home-hero .h-grid,
+.home-hero .hero-inner,
+.home-hero .scroll-cue { position: relative; z-index: 1; }
+</style>
 <!-- Fonts & Icons -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +66,9 @@
 
 <!-- ══ HERO ══ -->
 <section class="home-hero">
+  <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+    <source src="videos/atpl.mp4" type="video/mp4">
+  </video>
   <div class="h-orb orb1"></div>
   <div class="h-orb orb2"></div>
   <div class="h-orb orb3"></div>
