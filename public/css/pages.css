@@ -8,7 +8,7 @@
   height: 100vh;
   background: var(--grad-hero);
   display: flex; align-items: center; justify-content: center;
-  padding: 80px 5vw 60px;
+  padding: 120px 5vw 40px;
   position: relative; overflow: hidden; text-align: center;
   box-sizing: border-box;
 }
